@@ -1,0 +1,63 @@
+@import "./variables";
+
+.footer-menu {
+    background-color: $white;
+    border-top: 1px solid $mainGrey;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+
+    .menu-holder {
+        display: flex;
+        justify-content: center;
+
+        .icon {
+            text-align: center;
+            padding-right: 40px;
+            padding-left: 40px;
+            cursor: pointer;
+
+            .img-holder {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 4px;
+
+                img {
+                    height: 24px;
+                }
+            }
+
+            p {
+                color: $mainBlack;
+                font-size: 10px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+// Media Queries
+@media (max-width: 768px) {
+
+    .footer-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .footer-menu {
+
+        .menu-holder {
+
+            .icon {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+    }
+}

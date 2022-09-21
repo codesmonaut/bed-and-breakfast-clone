@@ -1,0 +1,324 @@
+@import "./variables";
+
+.bnbs-container {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+
+    .bnb {
+        margin-top: 25px;
+        width: 265px;
+        position: relative;
+        cursor: pointer;
+
+        .carousel {
+            width: 265px;
+            height: 251px;
+            border-radius: 13px;
+            margin-bottom: 10px;
+
+            .carousel-inner {
+                width: 265px;
+                height: 251px;
+                border-radius: 13px;
+
+                .carousel-item {
+                    width: 265px;
+                    height: 251px;
+
+                    img {
+                        width: 265px;
+                        height: 251px;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .carousel-control-prev {
+                z-index: 0;
+            }
+
+            .carousel-control-next {
+                z-index: 0;
+            }
+
+            .visually-hidden {
+                display: none;
+            }
+
+            .carousel-indicators {
+                z-index: 1;
+            }
+        }
+
+        .text {
+            display: flex;
+            justify-content: space-between;
+
+            .bnb-description {
+
+                .bnb-name {
+                    color: $black;
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin-bottom: 2px;
+                }
+
+                .distance {
+                    color: $fontColor;
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin-bottom: 2px;
+                }
+
+                .date {
+                    color: $fontColor;
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin-bottom: 10px;
+                }
+
+                .price {
+                    color: $black;
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin-right: 2px;
+                    display: inline-block;
+
+                    span {
+                        display: inline-block;
+                        color: $black;
+                        font-size: 15px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        .rating {
+            display: flex;
+
+            img {
+                width: 12px;
+                height: 12px;
+                margin-right: 3px;
+                margin-top: 3px;
+            }
+
+            p {
+                color: $black;
+                font-size: 15px;
+                font-weight: 400;
+            }
+        }
+
+        .favorites {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 18px;
+            margin-right: 18px;
+            width: 27px;
+            height: 27px;
+            border-radius: 0;
+        }
+
+        &:last-of-type {
+            margin-bottom: 55px;
+        }
+    }
+}
+
+.bnbs-loading-screen {
+    position: relative;
+    height: 55vh;
+
+    img {
+        width: 55px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .dots-holder {
+        position: fixed;
+        left: 50%;
+        bottom: 15px;
+        transform: translate(-50%, -50%);
+
+        .lds-ellipsis {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 60px;
+        }
+        .lds-ellipsis div {
+        position: absolute;
+        top: 33px;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: $mainPink;
+        animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+        .lds-ellipsis div:nth-child(1) {
+        left: 8px;
+        animation: lds-ellipsis1 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(2) {
+        left: 8px;
+        animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(3) {
+        left: 32px;
+        animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(4) {
+        left: 56px;
+        animation: lds-ellipsis3 0.6s infinite;
+        }
+        @keyframes lds-ellipsis1 {
+        0% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+        }
+        @keyframes lds-ellipsis3 {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(0);
+        }
+        }
+        @keyframes lds-ellipsis2 {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(24px, 0);
+        }
+        }
+    }
+}
+
+.error-message {
+    color: $btnPink;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+
+// Media Queries
+@media (max-width: 1200px) {
+
+    .bnbs-container {
+        gap: 18px;
+
+        .bnb {
+            width: 307px;
+
+            .carousel {
+                width: 307px;
+                height: 290px;
+    
+                .carousel-inner {
+                    width: 307px;
+                    height: 290px;
+    
+                    .carousel-item {
+                        width: 307px;
+                        height: 290px;
+    
+                        img {
+                            width: 307px;
+                            height: 290px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+
+    .bnbs-container {
+
+        .bnb {
+            width: 350px;
+
+            .carousel {
+                width: 350px;
+                height: 332px;
+    
+                .carousel-inner {
+                    width: 350px;
+                    height: 332px;
+    
+                    .carousel-item {
+                        width: 350px;
+                        height: 332px;
+    
+                        img {
+                            width: 350px;
+                            height: 332px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .bnbs-container {
+        gap: 150px;
+        padding-bottom: 120px;
+
+        .bnb {
+            width: 100%;
+
+            .carousel {
+                width: 100%;
+                height: 100%;
+    
+                .carousel-inner {
+                    width: 100%;
+                    height: 100%;
+    
+                    .carousel-item {
+                        width: 100%;
+                        height: 100%;
+    
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            &:last-of-type {
+                margin-bottom: 78px;
+            }
+        }
+    }
+
+    .bnbs-loading-screen {
+
+        .dots-holder {
+            bottom: 50px;
+        }
+    }
+}

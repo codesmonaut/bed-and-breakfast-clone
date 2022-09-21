@@ -1,0 +1,420 @@
+@import "./variables";
+
+.menubar {
+    background-color: $white;
+    height: 80px;
+    border-bottom: 1px solid $mainGrey;
+    padding-top: 16px;
+    position: sticky;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 2;
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .logo {
+            width: 102px;
+            
+            img {
+                width: 102px;
+            }
+        }
+
+        .phone-logo {
+            display: none;
+
+            img {
+                width: 30px;
+            }
+        }
+    
+        .search-container {
+            width: 363px;
+            height: 48px;
+            border-radius: 100px;
+            display: flex;
+            position: relative;
+            background-color: $white;
+            border: 1px solid $mainGrey;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 100px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+    
+            button {
+                outline: none;
+                border: none;
+                font-size: 14px;
+                font-weight: 500;
+                padding-left: 25px;
+                padding-right: 15px;
+                background-color: $white;
+                cursor: pointer;
+            }
+    
+            #left-border-radius {
+                border-radius: 100px 0 0 100px;
+                border-right: 1px solid $mainGrey;
+            }
+    
+            #right-border-radius {
+                border-radius: 0 100px 100px 0;
+                padding-right: 54px;
+                padding-left: 15px;
+                font-weight: 400;
+                color: $fontColor;
+            }
+    
+            #middle-btn {
+                padding-left: 15px;
+                border-right: 1px solid $mainGrey;
+            }
+    
+            .search-icon {
+                width: 32px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin-top: 8px;
+                margin-right: 8px;
+                cursor: pointer;
+            }
+
+            &:hover {
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            }
+        }
+    
+        .profile-container {
+            display: flex;
+            height: 42px;
+            width: 249px;
+    
+            #hosting {
+                font-size: 14px;
+                font-weight: 500;
+                padding: 13px 14px;
+                outline: none;
+                border: none;
+                border-radius: 100px;
+                background-color: transparent;
+                color: $mainBlack;
+                cursor: pointer;
+                transition: 0.2s;
+    
+                &:hover {
+                    background-color: $btnHover;
+                }
+            }
+    
+            #language {
+                padding: 13px;
+                outline: none;
+                border: none;
+                border-radius: 100px;
+                background-color: transparent;
+                margin-right: 5px;
+                cursor: pointer;
+                transition: 0.2s;
+    
+                img {
+                    width: 16px;
+                }
+    
+                &:hover {
+                    background-color: $btnHover;
+                }
+            }
+
+            .dropdown-menu-container {
+
+                .profile-icon {
+                    width: 77px;
+                    border-radius: 100px;
+                    cursor: pointer;
+                    transition: 0.2s;
+    
+                    &:hover {
+                        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+                    }
+                }
+    
+                .profile-icon-clicked {
+                    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+                }
+
+                .dropdown-menu-holder {
+                    max-width: 1140px;
+                    margin: 0 auto;
+                    position: relative;
+                
+                    .dropdown-menu {
+                        position: absolute;
+                        top: 11px;
+                        right: 0;
+                        width: 244px;
+                        background-color: $white;
+                        border-radius: 13px;
+                        padding-top: 9px;
+                        padding-bottom: 9px;
+                        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+                    
+                        .menu-content {
+                    
+                            a {
+                                display: block;
+                                width: 100%;
+                                text-decoration: none;
+                                font-size: 15px;
+                                font-weight: 400;
+                                color: $mainBlack;
+                                padding-left: 15px;
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                    
+                                &:hover {
+                                    background-color: $btnHover;
+                                }
+                            }
+                    
+                            #sign-up {
+                                font-weight: 600;
+                            }
+                    
+                            .horizontal-line {
+                                display: block;
+                                width: 100%;
+                                height: 1px;
+                                background-color: $mainGrey;
+                                margin-top: 5px;
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.25);
+        z-index: -5;
+    }
+
+    .white-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        background-color: $white;
+        z-index: -5;
+    }
+
+    .transparent {
+        display: none;
+    }
+
+    .extended-menu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        margin-top: 79px;
+        height: 85px;
+        width: 100%;
+        overflow: hidden;
+        background-color: $white;
+        padding-bottom: 23px;
+        transition: 0.2s;
+
+        .inputs-holder {
+            display: flex;
+            justify-content: center;
+
+            .inputs-wrapper {
+                display: flex;
+                height: 62px;
+                position: relative;
+                border: 1px solid $mainGrey;
+                border-radius: 100px;
+
+                .input-wrapper {
+                    background-color: $white;
+                    padding-left: 32px;
+                    padding-top: 13px;
+                    border-radius: 100px;
+                    cursor: pointer;
+
+                    label {
+                        display: block;
+                        font-size: 12px;
+                        font-weight: 600;
+                        margin-bottom: 2px;
+                        cursor: pointer;
+                    }
+
+                    input {
+                        display: block;
+                        outline: none;
+                        border: none;
+                        background-color: $white;
+                        
+                        &::placeholder {
+                            font-family: $dmSans;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: $mainGrey;
+    
+                        input {
+                            background-color: $mainGrey;
+                        }
+                    }
+                }
+
+                .where {
+                    width: 328px;
+
+                    input {
+                        width: 255px;
+                    }
+                }
+
+                .check-in {
+                    width: 130px;
+                    padding-left: 24px;
+
+                    input {
+                        width: 92px;
+                    }
+                }
+
+                .check-out {
+                    padding-left: 24px;
+                    width: 130px;
+
+                    input {
+                        width: 92px;
+                    }
+                }
+
+                .who {
+                    padding-left: 24px;
+                    padding-right: 130px;
+                    width: 208px;
+
+                    input {
+                        width: 155px;
+                    }
+                }
+
+                .search-btn {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 48px;
+                    margin-top: 7px;
+                    margin-right: 7px;
+                    transition: 0.2s;
+                    cursor: pointer;
+
+                    &:hover {
+                        filter: brightness(85%);
+                    }
+                }
+            }
+        }
+    }
+
+    .disabled {
+        height: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+        transition: 0.2s;
+    }
+}
+
+// Media Queries
+@media (max-width: 1200px) {
+
+    .menubar {
+
+        .menu {
+
+            .logo {
+                display: none;
+            }
+
+            .phone-logo {
+                display: block;
+            }
+
+            .profile-container {
+
+                .dropdown-menu-container {
+
+                    .dropdown-menu-holder {
+                        max-width: 960px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+
+    .menubar {
+
+        .menu {
+
+            .profile-container {
+
+                .dropdown-menu-container {
+
+                    .dropdown-menu-holder {
+                        max-width: 720px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .menubar {
+        display: none;
+
+        .menu {
+
+            .profile-container {
+
+                .dropdown-menu-container {
+
+                    .dropdown-menu-holder {
+                        display: none;
+                
+                        .dropdown-menu {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

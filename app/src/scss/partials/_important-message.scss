@@ -1,0 +1,58 @@
+@import "./variables";
+
+.important-message {
+    position: fixed;
+    left: 50%;
+    bottom: 66px;
+    transform: translate(-50%, -50%);
+
+    .important-message-content {
+
+        p {
+            background-color: $mainBlack;
+            padding: 15px 18px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+            color: $white;
+            white-space: nowrap;
+            cursor: default;
+        }
+    }
+    
+}
+
+// Media Queries
+@media (max-width: 768px) {
+
+    .important-message {
+        bottom: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .important-message {
+
+        .important-message-content {
+
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+
+    .important-message {
+
+        .important-message-content {
+
+            p {
+                white-space: normal;
+                width: 243px;
+            }
+        }
+    }
+}

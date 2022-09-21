@@ -1,0 +1,48 @@
+@import "./variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $white;
+    color: $mainBlack;
+    font-family: $dmSans;
+    font-feature-settings: "ss03" 1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        max-width: 100%;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
